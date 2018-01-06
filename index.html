@@ -11,24 +11,62 @@
   <body ng-app="NeXtVoter" ng-controller="QuestionsController as questionList">
 
         <div class="row">
-          <div class="col-md-6 col-md-offset-3">
+          <div class="page-header col-md-12">
+            <h1>Public Transport Timer</h1>
+          </div>
 
-            <div class="page-header">
-              <h1>Public Transport Timer</h1>
-            </div>
+          <div class="col-md-9 col-md-offset-3">
 
             <div class="form-group">
               <h3>Please Select</h3>
-              <input type="text" class="form-control" ng-model="questionList.questionText" placeholder="Enter new Question...">
-              <button type="button" class="btn btn-primary" ng-click="questionList.addToList();">Post new Question</button>
+              <button type="button" class="btn btn-primary btn-block" ng-click="questionList.addToList();">Report Arrival Time</button>
+              <button type="button" class="btn btn-secondary btn-block" ng-click="questionList.addToList();">Report Departure Time</button>
             </div>
 
-            <h3>Question List</h3>
+            <h3>Report</h3>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Type</th>
+                  <th>Date and Time</th>
+                  <th>Travel Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Departure</td>
+                  <td>06.01.2018 17:25:19</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Arrival</td>
+                  <td>06.01.2018 17:28:24</td>
+                  <td>185</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Departure</td>
+                  <td>06.01.2018 17:28:59</td>
+                  <td>35</td>
+                </tr>
+              </tbody>
+            </table>
+
             <div ng-repeat="item in questionList.items | orderBy: '-votes'">
               <span class="glyphicon glyphicon-thumbs-up" ng-click="questionList.incrementVote(item);"></span>
               {{item.question}}: {{item.votes}}
             </div>
 
+          </div>
+          <div class="col-md-3 col-md-offset-3">
+            <div class="form-group">
+              <h3>Send via E-Mail</h3>
+              <input type="text" class="form-control" ng-model="questionList.questionText" placeholder="Enter E-Mail">
+              <button type="button" class="btn btn-primary" ng-click="questionList.addToList();">Send List</button>
+            </div>
           </div>
         </div>
   </body>
