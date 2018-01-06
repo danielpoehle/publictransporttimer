@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Public Transport Timer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> .glyphicon-thumbs-up { cursor:pointer } </style>
+  </head>
+  <body ng-app="NeXtVoter" ng-controller="QuestionsController as questionList">
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+
+            <div class="page-header">
+              <h1>Public Transport Timer</h1>
+            </div>
+
+            <div class="form-group">
+              <h3>Please Select</h3>
+              <input type="text" class="form-control" ng-model="questionList.questionText" placeholder="Enter new Question...">
+              <button type="button" class="btn btn-primary" ng-click="questionList.addToList();">Post new Question</button>
+            </div>
+
+            <h3>Question List</h3>
+            <div ng-repeat="item in questionList.items | orderBy: '-votes'">
+              <span class="glyphicon glyphicon-thumbs-up" ng-click="questionList.incrementVote(item);"></span>
+              {{item.question}}: {{item.votes}}
+            </div>
+
+          </div>
+        </div>
+  </body>
+</html>
