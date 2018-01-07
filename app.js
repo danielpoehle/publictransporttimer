@@ -39,13 +39,15 @@
       var time = new Date();
       if(reportItems.length > 0){
         // in seconds
-        relativeTime = Math.floor(time/1000) - Math.floor(reportItems[reportItems.length - 1].time / 1000);
+        relativeTime = Math.floor(time/1000) - Math.floor(reportItems[reportItems.length - 1].timestamp / 1000);
       }
       //console.log(relativeTime + " relativeTime");
       //console.log(time + " time");
       var id = reportItems.length + 1;
+      var date = time.toLocaleDateString();
+      var timeclock = time.toLocaleTimeString();
 
-      reportItems.push({id: id, type: type, time: time, relativeTime: relativeTime});
+      reportItems.push({id: id, type: type, timestamp: time, date: date, time: timeclock, relativeTime: relativeTime});
       //console.log(reportItems.length + " length of items after");
       //console.log(reportItems);
 

@@ -43,7 +43,7 @@
                   <tr ng-repeat="item in reportList.items | orderBy: '-time'">
                     <th scope="row">{{item.id}}</th>
                     <td>{{item.type}}</td>
-                    <td>{{item.time.toLocaleTimeString()}}</td>
+                    <td>{{item.time}}</td>
                     <td>{{item.relativeTime}}</td>
                   </tr>
               </tbody>
