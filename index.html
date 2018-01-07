@@ -12,21 +12,33 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <script src="https://use.fontawesome.com/3eba172dd9.js"></script>
+
     <script src="app.js"></script>
   </head>
   <body ng-app="PublicTransportTimer" ng-controller="ReportsController as reportList">
     <div class="container-fluid">
         <div class="row">
           <div class="page-header col-md-12">
-            <h1>Public Transport Timer</h1>
+            <h1>
+              Public Transport Timer |
+              <span class="fa fa-subway" aria-hidden="true"></span>
+              <span class="fa fa-map-pin" aria-hidden="true"></span>
+              <span class="fa fa-bus" aria-hidden="true"></span>
+            </h1>
           </div>
 
           <div class="col-md-9 col-md-offset-3">
 
             <div class="form-group">
               <h3>Please Select</h3>
-              <button type="button" class="btn btn-primary btn-block btn-lg" ng-click="reportList.addToList('Arrival');">Report Arrival Time</button>
-              <button type="button" class="btn btn-secondary btn-block btn-lg" ng-click="reportList.addToList('Departure');">Report Departure Time</button>
+              <button type="button" class="btn btn-primary btn-block btn-lg" ng-click="reportList.addToList('Arrival');">
+                <span class="fa fa-map-pin" aria-hidden="true"></span>
+                Report Arrival Time</button>
+              <button type="button" class="btn btn-secondary btn-block btn-lg" ng-click="reportList.addToList('Departure');">
+                <span class="fa fa-bus" aria-hidden="true"></span>
+                Report Departure Time</button>
             </div>
 
             <h3>Report</h3>
@@ -37,6 +49,7 @@
                   <th>Type</th>
                   <th>Timestamp</th>
                   <th>Relative Time</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -45,6 +58,11 @@
                     <td>{{item.type}}</td>
                     <td>{{item.time}}</td>
                     <td>{{item.relativeTime}}</td>
+                    <td>
+                      <button type="button" class="btn btn-danger btn-sm" aria-label="Remove">
+                      <span class="fa fa-times" aria-hidden="true"></span>
+                      </button>
+                    </td>
                   </tr>
               </tbody>
             </table>
@@ -53,7 +71,12 @@
             <div class="form-group">
               <h3>Download Report</h3>
               <p><input type="text" class="form-control" ng-model="reportList.fileName" placeholder="Enter Filename, e.g. 180107_Li34_GRi.csv"></p>
-              <p><button type="button" class="btn btn-warning" ng-click="reportList.getCSV(reportList.fileName);">Download</button></p>
+              <p>
+                <button type="button" class="btn btn-warning" ng-click="reportList.getCSV(reportList.fileName);">
+                <span class="fa fa-download" aria-hidden="true"></span>
+                Download
+                </button>
+              </p>
             </div>
           </div>
         </div>
