@@ -31,7 +31,7 @@
       var time = new Date();
       if(reportItems.length > 0){
         // in seconds
-        relativeTime = (time - reportItems[reportItems.length - 1].time) / 1000;
+        relativeTime = Math.floor(time/1000) - Math.floor(reportItems[reportItems.length - 1].time / 1000);
       }
       //console.log(relativeTime + " relativeTime");
       //console.log(time + " time");
