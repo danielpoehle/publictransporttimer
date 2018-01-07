@@ -21,8 +21,13 @@
 
     reportList.getCSV = function(fileName){
       //console.log(fileName + " fileName parameter");
-
       ReportTimeService.downloadCSV({filename: fileName});
+    };
+
+    reportList.removeItem = function(itemID){
+      console.log(itemID + " item ID in reportList");
+
+      ReportTimeService.remove(itemID);
     };
 
   }
@@ -36,14 +41,15 @@
     service.addReportItem = function(type){
       //console.log(reportItems.length + " length of items before");
       var relativeTime = 0;
+      var id = 1;
       var time = new Date();
       if(reportItems.length > 0){
         // in seconds
         relativeTime = Math.floor(time/1000) - Math.floor(reportItems[reportItems.length - 1].timestamp / 1000);
+        id = reportItems[reportItems.length - 1].id + 1;
       }
       //console.log(relativeTime + " relativeTime");
       //console.log(time + " time");
-      var id = reportItems.length + 1;
       var date = time.toLocaleDateString();
       var timeclock = time.toLocaleTimeString();
 
@@ -80,6 +86,13 @@
       link.setAttribute('href', data);
       link.setAttribute('download', filename);
       link.click();
+    };
+
+    service.remove = function(id){
+      var index = reportItems.findIndex(x => x.id== id);
+      var item = reportItems[index];
+      console.log(item);
+      reportItems.splice(index, 1);
     };
 
     //service.getBoughtItems = function(){
