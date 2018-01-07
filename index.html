@@ -35,8 +35,8 @@
                 <tr>
                   <th>#</th>
                   <th>Type</th>
-                  <th>Date and Time</th>
-                  <th>Travel Time</th>
+                  <th>Timestamp</th>
+                  <th>Relative Time</th>
                 </tr>
               </thead>
               <tbody>
@@ -51,9 +51,9 @@
           </div>
           <div class="col-md-3 col-md-offset-3">
             <div class="form-group">
-              <h3>Send via E-Mail</h3>
-              <input type="text" class="form-control" ng-model="questionList.questionText" placeholder="Enter E-Mail">
-              <button type="button" class="btn btn-primary" ng-click="questionList.addToList();">Send List</button>
+              <h3>Download Report</h3>
+              <p><input type="text" class="form-control" ng-model="questionList.questionText" placeholder="Enter Filename, e.g. 180107_Li34_GRi.csv"></p>
+              <p><button type="button" class="btn btn-warning" ng-click="questionList.addToList();">Download</button></p>
             </div>
           </div>
         </div>
