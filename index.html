@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Public Transport Timer</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="app.js"></script>
-    <style> .glyphicon-thumbs-up { cursor:pointer } </style>
   </head>
-  <body ng-app="NeXtVoter" ng-controller="QuestionsController as questionList">
+  <body ng-app="PublicTransportTimer" ng-controller="ReportsController as reportList">
     <div class="container-fluid">
         <div class="row">
           <div class="page-header col-md-12">
@@ -24,8 +25,8 @@
 
             <div class="form-group">
               <h3>Please Select</h3>
-              <button type="button" class="btn btn-primary btn-block btn-lg" ng-click="questionList.addToList();">Report Arrival Time</button>
-              <button type="button" class="btn btn-secondary btn-block btn-lg" ng-click="questionList.addToList();">Report Departure Time</button>
+              <button type="button" class="btn btn-primary btn-block btn-lg" ng-click="reportList.addToList('Arrival');">Report Arrival Time</button>
+              <button type="button" class="btn btn-secondary btn-block btn-lg" ng-click="reportList.addToList('Departure');">Report Departure Time</button>
             </div>
 
             <h3>Report</h3>
@@ -39,32 +40,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Departure</td>
-                  <td>06.01.2018 17:25:19</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Arrival</td>
-                  <td>06.01.2018 17:28:24</td>
-                  <td>185</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Departure</td>
-                  <td>06.01.2018 17:28:59</td>
-                  <td>35</td>
-                </tr>
+                  <tr ng-repeat="item in reportList.items | orderBy: '-time'">
+                    <th scope="row">{{item.id}}</th>
+                    <td>{{item.type}}</td>
+                    <td>{{item.time}}</td>
+                    <td>{{item.relativeTime}}</td>
+                  </tr>
               </tbody>
             </table>
-
-            <div ng-repeat="item in questionList.items | orderBy: '-votes'">
-              <span class="glyphicon glyphicon-thumbs-up" ng-click="questionList.incrementVote(item);"></span>
-              {{item.question}}: {{item.votes}}
-            </div>
-
           </div>
           <div class="col-md-3 col-md-offset-3">
             <div class="form-group">
