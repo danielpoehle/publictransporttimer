@@ -35,16 +35,16 @@
       }
       //console.log(relativeTime + " relativeTime");
       //console.log(time + " time");
+      var id = reportItems.length + 1;
 
-
-      reportItems.push({id: 1, type: type, time: time, relativeTime: relativeTime});
+      reportItems.push({id: id, type: type, time: time, relativeTime: relativeTime});
       //console.log(reportItems.length + " length of items after");
       //console.log(reportItems);
 
     };
 
     service.getReportItems = function(){
-      console.log(reportItems);
+      //console.log(reportItems);
       return reportItems;
     };
 
