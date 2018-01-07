@@ -10,12 +10,20 @@
   function ReportsController(ReportTimeService){
     var reportList = this;
 
+    reportList.fileName = '';
+
     reportList.addToList = function(type){
       //console.log(type + " clicked add to List");
       ReportTimeService.addReportItem(type);
     };
 
     reportList.items = ReportTimeService.getReportItems();
+
+    reportList.getCSV = function(fileName){
+      //console.log(fileName + " fileName parameter");
+
+      ReportTimeService.downloadCSV({filename: fileName});
+    };
 
   }
 
@@ -48,9 +56,60 @@
       return reportItems;
     };
 
+    service.downloadCSV = function(args) {
+      var data, filename, link;
+
+      var csv = convertArrayOfObjectsToCSV({
+          data: reportItems
+      });
+
+      //console.log(csv + " is generated");
+
+      if (csv == null) return;
+
+      filename = args.filename || 'export.csv';
+
+      if (!csv.match(/^data:text\/csv/i)) {
+          csv = 'data:text/csv;charset=utf-8,' + csv;
+      }
+      data = encodeURI(csv);
+
+      link = document.createElement('a');
+      link.setAttribute('href', data);
+      link.setAttribute('download', filename);
+      link.click();
+    };
+
     //service.getBoughtItems = function(){
     //  return boughtItems;
     //};
+  }
+
+  function convertArrayOfObjectsToCSV(args) {
+    var result, ctr, keys, columnDelimiter, lineDelimiter, data;
+    data = args.data || null;
+    if (data == null || !data.length) {return null;}
+
+    columnDelimiter = args.columnDelimiter || ',';
+    lineDelimiter = args.lineDelimiter || '\n';
+
+    keys = Object.keys(data[0]);
+
+    result = '';
+    result += keys.join(columnDelimiter);
+    result += lineDelimiter;
+    data.forEach(function(item) {
+      ctr = 0;
+      keys.forEach(function(key) {
+        if (ctr > 0) result += columnDelimiter;
+
+        result += item[key];
+        ctr++;
+      });
+
+      result += lineDelimiter;
+    });
+    return result;
   }
 
 })();
