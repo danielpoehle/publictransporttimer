@@ -27,7 +27,8 @@
 
     reportList.getCSV = function(fileName){
       //console.log(fileName + " fileName parameter");
-      ReportTimeService.downloadCSV({filename: fileName});
+      let f = fileName + '.csv';
+      ReportTimeService.downloadCSV({filename: f});
     };
 
     reportList.addComment = function(itemID, comment){
