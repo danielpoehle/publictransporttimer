@@ -14,7 +14,7 @@
     let reportList = this;
 
     reportList.fileName = '';
-    reportList.comment = 'bla blubb';
+    reportList.comment = '';
     //reportList.lines = [33, 34];
     //reportList.direction = [1, 2];
 
@@ -32,6 +32,7 @@
 
     reportList.addComment = function(itemID, comment){
       ReportTimeService.addComment(itemID, comment);
+      reportList.comment = '';
     }
 
     reportList.removeItem = function(itemID){

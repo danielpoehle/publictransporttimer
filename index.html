@@ -37,15 +37,17 @@
             <div class="form-group">
 
               <h3>Please Select</h3>
-              <button type="button" class="btn btn-primary btn-block btn-lg" ng-click="reportList.addToList('Arrival');">
+              <button type="button" class="btn btn-primary btn-block btn-lg" ng-click="reportList.addToList('Arr');">
                 <span class="fa fa-map-pin" aria-hidden="true"></span>
                 Report Arrival Time</button>
-              <button type="button" class="btn btn-secondary btn-block btn-lg" ng-click="reportList.addToList('Departure');">
+              <button type="button" class="btn btn-secondary btn-block btn-lg" ng-click="reportList.addToList('Dep');">
                 <span class="fa fa-bus" aria-hidden="true"></span>
                 Report Departure Time</button>
               <button type="button" class="btn btn-dark btn-block btn-lg" ng-click="reportList.addToList('Transit');">
                 <span class="fa fa-road" aria-hidden="true"></span>
                 Report Transit Time</button>
+                <label>Comment</label>
+                <input type="text" class="form-control" ng-model="reportList.comment" placeholder="Enter new comment">
             </div>
 
             <h3>Report</h3>
@@ -54,10 +56,10 @@
                 <tr>
                   <th>#</th>
                   <th>Type</th>
-                  <th>Timestamp</th>
-                  <th>Duration</th>
+                  <th>Time</th>
+                  <th>Dur</th>
                   <th>Comment</th>
-                  <th>Action</th>
+                  <th>Del</th>
                 </tr>
               </thead>
               <tbody>
@@ -66,11 +68,12 @@
                     <td>{{item.type}}</td>
                     <td>{{item.time}}</td>
                     <td>{{item.relativeTime}}</td>
-                    <td>{{item.comment}}</td>
-                    <td>
+                    <td>{{item.comment}}
                       <button type="button" class="btn btn-primary btn-sm" aria-label="Comment" ng-click="reportList.addComment(item.id, reportList.comment);">
                       <span class="fa fa-comment" aria-hidden="true"></span>
                       </button>
+                    </td>
+                    <td>
                       <button type="button" class="btn btn-danger btn-sm" aria-label="Remove" ng-click="reportList.removeItem(item.id);">
                       <span class="fa fa-times" aria-hidden="true"></span>
                       </button>
