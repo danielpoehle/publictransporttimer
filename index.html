@@ -35,6 +35,12 @@
           <div class="col-md-9 col-md-offset-3">
 
             <div class="form-group">
+
+              <label>Select Line</label>
+
+              <select ng-model="selectedName" ng-options="x for x in reportList.lines">
+              </select>
+              
               <h3>Please Select</h3>
               <button type="button" class="btn btn-primary btn-block btn-lg" ng-click="reportList.addToList('Arrival');">
                 <span class="fa fa-map-pin" aria-hidden="true"></span>

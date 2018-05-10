@@ -2,15 +2,20 @@
 
   'use strict'; //browser does complain about bad coding
 
+  //let stops = require("./lines/buslines.js");
+  //import  getBusline  from "/lines/buslines";
+
   angular.module('PublicTransportTimer', [])
   .controller('ReportsController', ReportsController)
   .service('ReportTimeService', ReportTimeService);
 
   ReportsController.$inject = ['ReportTimeService'];
   function ReportsController(ReportTimeService){
-    var reportList = this;
+    let reportList = this;
 
     reportList.fileName = '';
+    //reportList.lines = [33, 34];
+    //reportList.direction = [1, 2];
 
     reportList.addToList = function(type){
       //console.log(type + " clicked add to List");
@@ -35,14 +40,14 @@
 
 
   function ReportTimeService(){
-    var service = this;
-    var reportItems = [];
+    let service = this;
+    let reportItems = [];
 
     service.addReportItem = function(type){
       //console.log(reportItems.length + " length of items before");
-      var relativeTime = 0;
-      var id = 1;
-      var time = new Date();
+      let relativeTime = 0;
+      let id = 1;
+      let time = new Date();
       if(reportItems.length > 0){
         // in seconds
         relativeTime = Math.floor(time/1000) - Math.floor(reportItems[reportItems.length - 1].timestamp / 1000);
@@ -50,8 +55,8 @@
       }
       //console.log(relativeTime + " relativeTime");
       //console.log(time + " time");
-      var date = time.toLocaleDateString();
-      var timeclock = time.toLocaleTimeString();
+      let date = time.toLocaleDateString();
+      let timeclock = time.toLocaleTimeString();
 
       reportItems.push({id: id, type: type, timestamp: time, date: date, time: timeclock, relativeTime: relativeTime});
       //console.log(reportItems.length + " length of items after");
@@ -65,9 +70,9 @@
     };
 
     service.downloadCSV = function(args) {
-      var data, filename, link;
+      let data, filename, link;
 
-      var csv = convertArrayOfObjectsToCSV({
+      let csv = convertArrayOfObjectsToCSV({
           data: reportItems
       });
 
@@ -89,8 +94,8 @@
     };
 
     service.remove = function(id){
-      var index = reportItems.findIndex(x => x.id== id);
-      var item = reportItems[index];
+      let index = reportItems.findIndex(x => x.id== id);
+      let item = reportItems[index];
       console.log(item);
       reportItems.splice(index, 1);
     };
@@ -101,11 +106,11 @@
   }
 
   function convertArrayOfObjectsToCSV(args) {
-    var result, ctr, keys, columnDelimiter, lineDelimiter, data;
+    let result, ctr, keys, columnDelimiter, lineDelimiter, data;
     data = args.data || null;
     if (data == null || !data.length) {return null;}
 
-    columnDelimiter = args.columnDelimiter || ',';
+    columnDelimiter = args.columnDelimiter || ';';
     lineDelimiter = args.lineDelimiter || '\n';
 
     keys = Object.keys(data[0]);
