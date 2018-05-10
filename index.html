@@ -36,11 +36,6 @@
 
             <div class="form-group">
 
-              <label>Select Line</label>
-
-              <select ng-model="selectedName" ng-options="x for x in reportList.lines">
-              </select>
-              
               <h3>Please Select</h3>
               <button type="button" class="btn btn-primary btn-block btn-lg" ng-click="reportList.addToList('Arrival');">
                 <span class="fa fa-map-pin" aria-hidden="true"></span>
@@ -61,7 +56,8 @@
                   <th>Type</th>
                   <th>Timestamp</th>
                   <th>Duration</th>
-                  <th>Delete</th>
+                  <th>Comment</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -70,7 +66,11 @@
                     <td>{{item.type}}</td>
                     <td>{{item.time}}</td>
                     <td>{{item.relativeTime}}</td>
+                    <td>{{item.comment}}</td>
                     <td>
+                      <button type="button" class="btn btn-primary btn-sm" aria-label="Comment" ng-click="reportList.addComment(item.id, reportList.comment);">
+                      <span class="fa fa-comment" aria-hidden="true"></span>
+                      </button>
                       <button type="button" class="btn btn-danger btn-sm" aria-label="Remove" ng-click="reportList.removeItem(item.id);">
                       <span class="fa fa-times" aria-hidden="true"></span>
                       </button>

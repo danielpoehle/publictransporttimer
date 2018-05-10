@@ -14,6 +14,7 @@
     let reportList = this;
 
     reportList.fileName = '';
+    reportList.comment = 'bla blubb';
     //reportList.lines = [33, 34];
     //reportList.direction = [1, 2];
 
@@ -28,6 +29,10 @@
       //console.log(fileName + " fileName parameter");
       ReportTimeService.downloadCSV({filename: fileName});
     };
+
+    reportList.addComment = function(itemID, comment){
+      ReportTimeService.addComment(itemID, comment);
+    }
 
     reportList.removeItem = function(itemID){
       console.log(itemID + " item ID in reportList");
@@ -48,6 +53,7 @@
       let relativeTime = 0;
       let id = 1;
       let time = new Date();
+      let comment = '';
       if(reportItems.length > 0){
         // in seconds
         relativeTime = Math.floor(time/1000) - Math.floor(reportItems[reportItems.length - 1].timestamp / 1000);
@@ -58,7 +64,7 @@
       let date = time.toLocaleDateString();
       let timeclock = time.toLocaleTimeString();
 
-      reportItems.push({id: id, type: type, timestamp: time, date: date, time: timeclock, relativeTime: relativeTime});
+      reportItems.push({id: id, type: type, timestamp: time, date: date, time: timeclock, relativeTime: relativeTime, comment: comment});
       //console.log(reportItems.length + " length of items after");
       //console.log(reportItems);
 
@@ -98,6 +104,11 @@
       let item = reportItems[index];
       console.log(item);
       reportItems.splice(index, 1);
+    };
+
+    service.addComment = function(id, text){
+      let index = reportItems.findIndex(x => x.id== id);
+      reportItems[index].comment = text;
     };
 
     //service.getBoughtItems = function(){
