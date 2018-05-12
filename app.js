@@ -13,10 +13,9 @@
   function ReportsController(ReportTimeService){
     let reportList = this;
 
-    reportList.fileName = '';
     reportList.comment = '';
-    //reportList.lines = [33, 34];
-    //reportList.direction = [1, 2];
+    reportList.line = '';
+    reportList.direction = '';
 
     reportList.addToList = function(type){
       //console.log(type + " clicked add to List");
@@ -25,9 +24,13 @@
 
     reportList.items = ReportTimeService.getReportItems();
 
-    reportList.getCSV = function(fileName){
+    reportList.getCSV = function(){
       //console.log(fileName + " fileName parameter");
-      let f = fileName + '.csv';
+      let f = ReportTimeService.getDateTime() + '_Li' + this.line + '_' + this.direction + '.csv';
+      let newchar = '-';
+      f = f.split(':').join(newchar);
+      console.log(f);
+
       ReportTimeService.downloadCSV({filename: f});
     };
 
@@ -75,6 +78,11 @@
     service.getReportItems = function(){
       //console.log(reportItems);
       return reportItems;
+    };
+
+    service.getDateTime = function(){
+      let firstItem = this.getReportItems()[0];
+      return (firstItem.date + '_' + firstItem.time);
     };
 
     service.downloadCSV = function(args) {
