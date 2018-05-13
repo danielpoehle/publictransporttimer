@@ -16,6 +16,7 @@
     reportList.comment = '';
     reportList.line = '';
     reportList.direction = '';
+    reportList.annotation = '';
 
     reportList.addToList = function(type){
       //console.log(type + " clicked add to List");
@@ -31,7 +32,7 @@
       f = f.split(':').join(newchar);
       console.log(f);
 
-      ReportTimeService.downloadCSV({filename: f});
+      ReportTimeService.downloadCSV({filename: f, annotation: this.annotation});
     };
 
     reportList.addComment = function(itemID, comment){
@@ -87,9 +88,11 @@
 
     service.downloadCSV = function(args) {
       let data, filename, link;
+      let tempReport = Object.create(reportItems);
+      tempReport.push({id: '', type: '', timestamp: '', date: '', time: '', relativeTime: '', comment: args.annotation});
 
       let csv = convertArrayOfObjectsToCSV({
-          data: reportItems
+          data: tempReport
       });
 
       //console.log(csv + " is generated");
