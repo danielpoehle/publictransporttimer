@@ -38,13 +38,27 @@
     reportList.addComment = function(itemID, comment){
       ReportTimeService.addComment(itemID, comment);
       reportList.comment = '';
-    }
+    };
 
     reportList.removeItem = function(itemID){
       console.log(itemID + " item ID in reportList");
 
       ReportTimeService.remove(itemID);
     };
+
+    reportList.filling = 0;
+
+    reportList.changeFilling = function(value){
+      this.filling += value;
+      if (this.filling < 0) {this.filling = 0;}
+    };
+
+    reportList.addFilling = function(itemID, filling){
+      ReportTimeService.addFilling(itemID, filling);
+      reportList.numPass = parseInt(ReportTimeService.getPassengers());
+    }
+
+    reportList.numPass = parseInt(ReportTimeService.getPassengers());
 
   }
 
@@ -60,6 +74,7 @@
       let id = 1;
       let time = new Date();
       let comment = '';
+      let pass = 0;
       if(reportItems.length > 0){
         // in seconds
         relativeTime = Math.floor(time/1000) - Math.floor(reportItems[reportItems.length - 1].timestamp / 1000);
@@ -70,7 +85,7 @@
       let date = time.toLocaleDateString();
       let timeclock = time.toLocaleTimeString();
 
-      reportItems.push({id: id, type: type, timestamp: time, date: date, time: timeclock, relativeTime: relativeTime, comment: comment});
+      reportItems.push({id: id, type: type, timestamp: time, date: date, time: timeclock, relativeTime: relativeTime, comment: comment, passenger: pass});
       //console.log(reportItems.length + " length of items after");
       //console.log(reportItems);
 
@@ -89,7 +104,7 @@
     service.downloadCSV = function(args) {
       let data, filename, link;
       let tempReport = Object.create(reportItems);
-      tempReport.push({id: '', type: '', timestamp: '', date: '', time: '', relativeTime: '', comment: args.annotation});
+      tempReport.push({id: '', type: '', timestamp: '', date: '', time: '', relativeTime: '', comment: args.annotation, passenger: ''});
 
       let csv = convertArrayOfObjectsToCSV({
           data: tempReport
@@ -123,6 +138,19 @@
       let index = reportItems.findIndex(x => x.id== id);
       reportItems[index].comment = text;
     };
+
+    service.addFilling = function(id, val){
+      let index = reportItems.findIndex(x => x.id== id);
+      reportItems[index].passenger = val;
+    };
+
+    service.getPassengers = function(){
+      let sum = 0;
+      for (let i = 0, len = reportItems.length; i < len; i++) {
+        sum += parseInt(reportItems[i].passenger);
+      }
+      return sum;
+    }
 
     //service.getBoughtItems = function(){
     //  return boughtItems;
