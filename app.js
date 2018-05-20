@@ -99,7 +99,8 @@
 
     service.getDateTime = function(){
       let firstItem = this.getReportItems()[0];
-      return (firstItem.date + '_' + firstItem.time);
+      let ymd = firstItem.timestamp.getFullYear() + "-" + (1+ firstItem.timestamp.getMonth()) + "-" + firstItem.timestamp.getDate();
+      return (ymd + '_' + firstItem.time);
     };
 
     service.downloadCSV = function(args) {
