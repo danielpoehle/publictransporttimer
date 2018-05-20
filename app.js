@@ -56,6 +56,7 @@
     reportList.addFilling = function(itemID, filling){
       ReportTimeService.addFilling(itemID, filling);
       reportList.numPass = parseInt(ReportTimeService.getPassengers());
+      reportList.filling = 0;
     }
 
     reportList.numPass = parseInt(ReportTimeService.getPassengers());
