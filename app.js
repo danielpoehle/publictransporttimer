@@ -44,6 +44,8 @@
       console.log(itemID + " item ID in reportList");
 
       ReportTimeService.remove(itemID);
+      ReportTimeService.correctRelativeTimes();
+      reportList.numPass = parseInt(ReportTimeService.getPassengers());
     };
 
     reportList.filling = 0;
@@ -99,7 +101,7 @@
 
     service.getDateTime = function(){
       let firstItem = this.getReportItems()[0];
-      let ymd = firstItem.timestamp.getFullYear() + "-" + (1+ firstItem.timestamp.getMonth()) + "-" + firstItem.timestamp.getDate();
+      let ymd = firstItem.timestamp.getFullYear() + "-" + (1+ firstItem.timestamp.getMonth()).toLocaleString(undefined, {minimumIntegerDigits: 2}) + "-" + firstItem.timestamp.getDate().toLocaleString(undefined, {minimumIntegerDigits: 2});
       return (ymd + '_' + firstItem.time);
     };
 
@@ -152,6 +154,12 @@
         sum += parseInt(reportItems[i].passenger);
       }
       return sum;
+    }
+
+    service.correctRelativeTimes = function(){
+      for (var i = 1; i < (reportItems.length); i++) {
+        reportItems[i].relativeTime = Math.floor(reportItems[i].timestamp/1000) - Math.floor(reportItems[i-1].timestamp / 1000);
+      }
     }
 
     //service.getBoughtItems = function(){
