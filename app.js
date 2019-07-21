@@ -5,8 +5,10 @@
   //let stops = require("./lines/buslines.js");
   //import  getBusline  from "/lines/buslines";
 
-  /*
-  fetch('http://example.com/movies.json')
+
+  let lineFrame = [];
+
+  fetch('https://raw.githubusercontent.com/danielpoehle/publictransporttimer/master/lines/lineFrame.json')
   .then(function(response) {
     if(response.ok) {
       return response.json();
@@ -14,12 +16,11 @@
     throw new Error('Network response was not ok.');
   })
   .then(function(myJson) {
-    console.log(JSON.stringify(myJson));
+    lineFrame = myJson;
   })
   .catch(function(error) {
     console.log('There has been a problem with your fetch operation: ', error.message);
   });
-  */
 
   angular.module('PublicTransportTimer', [])
   .controller('ReportsController', ReportsController)
@@ -36,6 +37,7 @@
 
     reportList.addToList = function(type){
       //console.log(type + " clicked add to List");
+      //console.log(lineFrame[0]);
       ReportTimeService.addReportItem(type);
     };
 
