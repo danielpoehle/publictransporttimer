@@ -5,6 +5,22 @@
   //let stops = require("./lines/buslines.js");
   //import  getBusline  from "/lines/buslines";
 
+  /*
+  fetch('http://example.com/movies.json')
+  .then(function(response) {
+    if(response.ok) {
+      return response.json();
+    }
+    throw new Error('Network response was not ok.');
+  })
+  .then(function(myJson) {
+    console.log(JSON.stringify(myJson));
+  })
+  .catch(function(error) {
+    console.log('There has been a problem with your fetch operation: ', error.message);
+  });
+  */
+
   angular.module('PublicTransportTimer', [])
   .controller('ReportsController', ReportsController)
   .service('ReportTimeService', ReportTimeService);
