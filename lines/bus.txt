@@ -1,0 +1,1 @@
+[out:csv(::id, ref, name, operator)];rel[route=bus][network=RMV](if: is_number(t["ref"]) && number(t["ref"])>23 && number(t["ref"])<85 )(50.0403,8.5135,50.1956,8.7874);out;

@@ -1,0 +1,122 @@
+@id	ref	name	operator
+20329	42	Bus 42: Hauptfriedhof => Weißkirchen Ost	Stadtwerke Oberursel
+57297	69	Bus 69: Weißer Stein => Dornbusch Hügelstraße	Veolia
+67934	52	Bus 52: Gallus Schloßborner Straße => Griesheim Jägerallee	Autohaus Sippel GmbH
+68092	33	Bus 33: Frankfurt (Main) Hbf => Westhafen => Frankfurt (Main) Hbf	
+68095	37	Bus 37: Hauptbahnhof => Briefzentrum	
+68754	32	Bus 32: Ostbahnhof => Westbahnhof	
+69109	35	Bus 35: Stresemannallee / Mörfelder Landstraße => Lerchesberg	
+69122	54	Bus 54: Sindlingen => Griesheim Bf	
+70027	51	Bus 51: IP Höchst Tor Ost => Niederrad Triftstraße	Autobus Sippel
+70037	79	Bus 79: Niederrad Bf => Haardtwaldplatz => Niederrad Bf	
+70597	29	Bus 29: Nieder-Erlenbach => Nordwestzentrum	
+70908	64	Bus 64: Hauptbahnhof Südseite => Ginnheim [U]	VGF
+70909	39	Bus 39: Markus-Krankenhaus => Berkersheim Mitte	VGF
+72674	36	Bus 36: Hainer Weg => Westbahnhof	
+72675	30	Bus 30: Sachsenhausen => Bad Vilbel	In der City Bus
+76642	31	Bus 31	
+89267	72	Bus 72: Nordwestzentrum => Rödelheim Bahnhof	Alpina
+105742	60	Bus 60: Alt Eschersheim Im Uhrig => Rödelheim Bahnhof	Alpina
+105751	55	Bus 55: Rödelheim Bahnhof => Sindlingen Friedhof	DB Regio Bus Mitte
+111229	42	Bus 42: Enkheim Victor-Slotosch-Straße => Bergen Ost => Enkheim Victor-Slotosch-Straße	In-der-City-Bus GmbH
+120093	66	Bus 66: Weißer Stein => Berkersheim Am Neuenberg	Veolia
+120096	63	Bus 63: Preungesheim Gravensteiner Platz => Weißer Stein	VGF
+131938	50	Bus 50: Unterliederbach West => Bockenheimer Warte	In-der-City-Bus GmbH
+132046	57	Bus 57: Taunusblick <=> Höchst Tor West	VGF
+174714	25	Bus 25: Berkersheim => Nieder-Erlenbach => Berkersheim	VGF
+214896	65	Bus 65: Ober-Erlenbach => Bad Vilbel	VGF
+240347	27	Bus 27: Nieder-Eschbach => Preungesheim	Veolia
+341441	60	Vilbus 60	Stadtwerke Bad Vilbel
+341442	61	Vilbus 61	Stadtwerke Bad Vilbel
+341443	62	Vilbus 62	Stadtwerke Bad Vilbel
+341462	63	Vilbus 63	Stadtwerke Bad Vilbel
+341463	64	Vilbus 64	Stadtwerke Bad Vilbel
+357942	62	Bus 62: Flughafen Terminal 1+2 => Schwanheim => Flughafen Terminal 2+1	RKH
+357974	61	Bus 61: Südbahnhof => Flughafen Terminal 2+1	Arriva (Autobus Sippel GmbH)
+358050	61	Bus 61: Flughafen Terminal 1+2 => Südbahnhof	Arriva (Autobus Sippel GmbH)
+358949	45	Bus 45: Südbahnhof => Deutschherrnbrücke	
+358950	45	Bus 45: Deutschherrnbrücke => Südbahnhof	
+358974	48	Bus 48: Südbahnhof => Goetheturm => Südbahnhof	RKH
+359964	78	Bus 78: Südbahnhof => Rheinlandstraße	
+359965	78	Bus 78: Rheinlandstraße => Südbahnhof	
+386876	71	Bus 71: Nordwestzentrum => Niederursel/Gerhart-Hauptmann-Ring => Nordwestzentrum	Alpina
+386894	73	Bus 73: Westbahnhof => Nordwestzentrum	Alpina
+387070	46	Bus 46: Rebstock Römerhof => Sachsenhausen Wasserweg	DB Regio Bus Mitte
+387072	46	Bus 46: Sachsenhausen Wasserweg => Rebstock Römerhof	DB Regio Bus Mitte
+388113	29	Bus 29: Nordwestzentrum => Nieder-Erlenbach	
+388878	72	Bus 72: Rödelheim Bahnhof => Nordwestzentrum	Alpina
+388880	73	Bus 73: Nordwestzentrum => Westbahnhof	Alpina
+389436	75	Bus 75: Bockenheimer Warte => Uni Campus Westend => Bockenheimer Warte	In-der-City-Bus GmbH
+392203	60	Bus 60: Rödelheim Bf => Alt Eschersheim Im Uhrig	Alpina
+555030	72	Bus 72	Stadtbus Kronberg
+570355	73	Bus 73	Stadtbus Kronberg
+963811	51	Bus 51: Niederrad Triftstraße => IP Höchst Tor Ost	Autobus Sippel
+967550	58	Bus 58: Eschborn West => Flughafen	In-der-City-Bus GmbH
+1295449	82	Bus 82: Oberrad Buchrainplatz => Waldfriedhof => Buchrainplatz	
+1295450	81	Bus 81: Oberrad Buchrainplatz => Waldfriedhof => Buchrainplatz	
+1295451	81	Bus 81: Oberrad Buchrainplatz => Goldbergweg => Buchrainplatz (ohne Waldfriedhof)	
+1295452	82	Bus 82: Oberrad Buchrainplatz => Wiener Straße => Buchrainplatz (ohne Waldfriedhof)	
+1295556	24	Bus 24: Kalbach Frischezentrum => U-Bahn-Station	
+1295557	24	Bus 24: Kalbach U-Bahn-Station => Frischezentrum	
+1477614	38	Bus 38: Panoramabad => Mitte => Atzelberg => Mitte => Panoramabad	Veolia Verkehr Rhein-Main GmbH
+1736615	58	Bus 58: Flughafen => Eschborn West	In-der-City-Bus GmbH
+1755034	44	Bus 44: Seckbach Leonhardsgasse => Friedhof Fechenheim	In-der-City-Bus
+1755083	44	Bus 44: Friedhof Fechenheim => Seckbach Leonhardsgasse	In-der-City-Bus
+1758248	34	Bus 34: Gallus Mönchhofstraße => Bornheim Mitte	Veolia Verkehr Rhein-Main GmbH
+1758642	34	Bus 34: Bornheim Mitte => Gallus Mönchhofstraße	Veolia Verkehr Rhein-Main GmbH
+1758828	43	Bus 43: Bornheim Mitte => Bergen Ost	In-der-City-Bus GmbH
+1758849	43	Bus 43: Bergen Ost => Bornheim Mitte	In-der-City-Bus GmbH
+1847261	37	Bus 37: Briefzentrum => Hauptbahnhof	
+1850406	27	Bus 27: Preungesheim => Nieder-Eschbach	Veolia
+1850419	63	Bus 63: Weißer Stein => Preungesheim Gravensteiner Platz	VGF
+1850687	28	Bus 28: Harheim => Kalbach (=> Riedberg)	Veolia
+1850688	28	Bus 28: (Riedberg =>) Kalbach => Harheim	Veolia
+1853598	66	Bus 66: Berkersheim Am Neuenberg => Weißer Stein	Veolia
+1853599	69	Bus 69: Dornbusch Hügelstraße =>Weißer Stein	Veolia
+1856402	30	Bus 30: Bad Vilbel => Sachsenhausen	
+1861549	64	Bus 64: Ginnheim [U] => Baseler Platz	VGF
+1861853	32	Bus 32: Westbahnhof => Ostbahnhof	
+1865760	56	Bus 56: Eschborn Südbf 	Transdev Rhein-Main GmbH
+1867564	50	Bus 50: Bockenheimer Warte => Unterliederbach West	In-der-City-Bus GmbH
+1878379	30	Bus 30: Unfallklinik => Hainer Weg	
+1878380	30	Bus 30: Hainer Weg => Unfallklinik	In der City Bus
+1899169	52	Bus 52: Griesheim Jägerallee => Gallus Schloßborner Straße	Autohaus Sippel GmbH
+1908138	47	Bus 47: Südbahnhof => Dielmannstraße => Südbahnhof	RKH
+1949076	35	Bus 35: Lerchesberg => Stresemannallee / Mörfelder Landstraße	
+2211953	42	Bus 42: Weißkirchen Ost => Hauptfriedhof	Stadtwerke Oberursel
+2221551	36	Bus 36: Westbahnhof => Hainer Weg	
+2641283	74	Bus 74: Kelsterbach Sportpark => Niederhölle	RKH
+2656448	74	Bus 74: Kelsterbach Niederhölle => Sportpark	RKH
+2834123	55	Bus 55: Sindlingen Friedhof => Rödelheim Bahnhof	DB Regio Bus Mitte
+2961010	71	Bus 71: Waldschwimmbad => Altkönig-Stift	Stadtbus Kronberg
+2961011	71	Bus 71: Altkönig-Stift => Waldschwimmbad	Stadtbus Kronberg
+3267225	53	Bus 53: Zeilsheim Bf => Bolongaropalast	VGF
+3895136	75	Bus 75: Kelsterbach Friedhof => Gewerbegebiet Mönchhof	RKH
+3895450	68	Bus 68: Kelsterbach Gesamtschule => Schwanheim (=> Höchst Bahnhof)	
+4237272	59	Bus 59: Unterliederbach => Griesheim	In-der-City-Bus
+4237782	59	Bus 59: Griesheim => Unterliederbach	In-der-City-Bus
+4613019	75	Bus 75: Gewerbegebiet Mönchhof => Kelsterbach Friedhof	RKH
+4673920	39	Bus 39: Berkersheim Mitte => Markus-Krankenhaus	VGF
+4678506	54	Bus 54: Griesheim Bf => Sindlingen	
+4679508	53	Bus 53: Ludwig-Scriba-Straße => Zeilsheim Bf	VGF
+4717234	68	Bus 68: Höchst Bahnhof => Kelsterbach Gesamtschule	
+4720393	77	Bus 77: Flughafen Terminal 1 => Gateway Gardens Ost	
+4720394	77	Bus 77: Gateway Gardens Ost => Flughafen Terminal 1	
+4844291	65	Bus 65: Bad Vilbel => Ober-Erlenbach	VGF
+4844303	65	Bus 65: Bad Vilbel => Nieder-Erlenbach	VGF
+4844304	65	Bus 65: Nieder-Erlenbach => Bad Vilbel	VGF
+5385214	44	Bus 44: Oberursel Bf => Weißkirchen Ost	Stadtwerke Oberursel
+5395144	46	Bus 46: Oberursel Bf => Stierstadt Bf	Stadtwerke Oberursel
+5395576	47	Bus 47: Stierstadt => Erich-Kästner-Schule	Stadtwerke Oberursel
+5395914	48	Bus 48: Oberstedten => IGS Stierstadt	
+5396207	49	Bus 49: IGS Stierstadt => Oberstedten	Stadtwerke Oberursel
+5748444	28	Bus 28: Kalbach Hopfenbrunnen => Harheim	Veolia
+6791355	64	Bus 64: Europaviertel West => Ginnheim [U]	VGF
+6791356	64	Bus 64: Ginnheim [U] => Europaviertel West	VGF
+6791509	67	Bus 67: Rödelheim Bahnhof => Rödelheim Eschborner Landstraße West	Transdev Rhein-Main GmbH
+6791510	67	Bus 67: Rödelheim Eschborner Landstraße West => Rödelheim Bahnhof	Alpina
+8901198	44	Bus 44: Weißkirchen Ost => Oberursel Bf	Stadtwerke Oberursel
+8901230	49	Bus 49: Oberstedten => IGS Stierstadt	Stadtwerke Oberursel
+8901311	46	Bus 46: Stierstadt Bf => Oberursel Bf	Stadtwerke Oberursel
+8901440	43	Bus 43: Weißkirchen Ost => Oberursel Bf	Stadtwerke Oberursel
+8901441	43	Bus 43: Oberursel Bf => Weißkirchen Ost	Stadtwerke Oberursel
